@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <title>Users-node</title>
+
+  <link rel="stylesheet" href="css/gs960.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="container_12">
+      <div ng-view></div>
+
+      <div class="grid_3">
+        <ng-include src="'templates/Sidebar.html'"></ng-include>
+      </div>
+    </div>
+      
+    <div class="footer">
+      
+    </div>
+  </div>
+
+  <script src="assets/angular/angular.min.js"></script>
+  <script src="assets/angular-route/angular-route.min.js"></script>
+
+  <script src="bootstrap.js"></script>
+  <script src="dist/built.min.js"></script>
+  
+
+   <!-- <script src="app.js"></script>
+
+  // <script src="services/api.js"></script>
+
+  // <script src="controllers/HomeCtrl.js"></script>
+  // <script src="controllers/SidebarCtrl.js"></script> -->
+
+</body>
+</html>

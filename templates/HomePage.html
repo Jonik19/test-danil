@@ -1,0 +1,57 @@
+<div class="grid_9">
+  <div class="content">
+    <div class="add">
+      <h3>Add person</h3>
+      <input ng-model="home.person.name" type="text" class="input">
+
+      <label for="power">
+        <input ng-model="home.person.options.power" type="checkbox" id="power">
+        power
+      </label>
+      <label for="rich">
+        <input ng-model="home.person.options.rich" type="checkbox" id="rich">
+        rich
+      </label>
+      <label for="genius">
+        <input ng-model="home.person.options.genius" type="checkbox" id="genius">
+        genius
+      </label>
+
+      <button ng-click="home.add(home.person)" class="btn btn__narrow btn__md">Add</button>
+    </div>
+
+    <div class="persons-list" >
+      <table class="item-desc-table" ng-if="home.persons.length">
+        <tr>
+          <td>Name</td>
+          <td>Power</td>
+          <td>Rich</td>
+          <td>Genius</td>
+          <td>Delete</td>
+        </tr>
+        <tr ng-repeat="person in home.persons | filter:home.filter">
+          <td>{{ person.name }}</td>
+          <td>
+            <input ng-model="person.options.power" ng-change="home.update()" type="checkbox">
+          </td>
+          <td>
+            <input ng-model="person.options.rich" ng-change="home.update()" type="checkbox">
+          </td>
+          <td>
+            <input ng-model="person.options.genius" ng-change="home.update()" type="checkbox">
+          </td>
+          <td>
+            <button ng-click="home.delete(person)">X</button>
+          </td>
+        </tr>
+      </table>
+
+      <ul ng-show="home.persons.length">
+        <li><a href="#/home">Home</a></li>
+        <li><a ng-disable="{{true}}" href="#/power">Power</a></li>
+        <li><a href="#/rich">Rich</a></li>
+        <li><a href="#/genius">Genius</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
